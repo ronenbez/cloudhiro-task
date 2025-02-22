@@ -1,0 +1,10 @@
+CREATE DATABASE aws_spot_pricing;
+USE aws_spot_pricing;
+
+CREATE TABLE spot_prices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    instance_type VARCHAR(50),
+    region VARCHAR(50),
+    price DECIMAL(10,5),
+    timestamp DATETIME
+);
