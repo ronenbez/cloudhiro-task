@@ -25,7 +25,10 @@ const SpotPricingTable: React.FC = () => {
 
   // Handle search filter
   const filteredData = data.filter((item) =>
-    item.instance_type.toLowerCase().includes(search.toLowerCase())
+    item.instance_type.toLowerCase().includes(search.toLowerCase()) ||
+    item.region.toLowerCase().includes(search.toLowerCase()) ||
+    String(item.price).includes(search.toLowerCase()) || 
+    item.timestamp.includes(search.toLowerCase())
   );
 
   // Handle sorting

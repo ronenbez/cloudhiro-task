@@ -22,33 +22,33 @@ app.get("/api/spot-pricing", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM spot_prices");
 
-    // Calculate average price per instance type
-    let instanceGroups = {};
+    // Calculate average price per region
+    let regionGroups = {};
     rows.forEach((item) => {
-      if (!instanceGroups[item.instance_type]) {
-        instanceGroups[item.instance_type] = [];
+      if (!regionGroups[item.region]) {
+        regionGroups[item.region] = [];
       }
-      instanceGroups[item.instance_type].push(item.price);
+      regionGroups[item.region].push(item.price);
     });
 
-    // Calculate average price for each instance type
+    // Calculate average price for each region
     let averagePrices = {};
-    for (let type in instanceGroups) {
-      let prices = instanceGroups[type];
+    for (let region in regionGroups) {
+      let prices = regionGroups[region];
       let avgPrice = prices.reduce((sum, p) => sum + Number(p), 0) / prices.length;
-      averagePrices[type] = avgPrice;
+      averagePrices[region] = avgPrice;
     }
 
-    // Mark steals (20% cheaper than average)
-    const STEAL_THRESHOLD = 0.8; // 20% cheaper
+    // Mark steals (50% cheaper than average)
+    const STEAL_THRESHOLD = 0.5; // 50% cheaper
 
     const processedData = rows.map((item) => ({
       ...item,
-      isSteal: Number(item.price) < Number(averagePrices[item.instance_type]) * STEAL_THRESHOLD,
+      isSteal: Number(item.price) < Number(averagePrices[item.region]) * STEAL_THRESHOLD,
     }));    
 
     res.json(processedData);
-    
+
   } catch (error) {
     console.error("Database query error:", error);
     res.status(500).json({ error: "Internal server error" });
