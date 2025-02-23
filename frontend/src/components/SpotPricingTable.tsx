@@ -118,7 +118,7 @@ const SpotPricingTable: React.FC = () => {
         <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
           Prev
         </Button>
-        <span className="mx-3">
+        <span className="mx-3 p-2">
           Page {currentPage} of {totalPages}
         </span>
         <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
