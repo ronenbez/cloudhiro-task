@@ -21,7 +21,34 @@ app.get("/api/spot-pricing", async (req, res) => {
   const db = await getDBConnection();
   try {
     const [rows] = await db.query("SELECT * FROM spot_prices");
-    res.json(rows);
+
+    // Calculate average price per instance type
+    let instanceGroups = {};
+    rows.forEach((item) => {
+      if (!instanceGroups[item.instance_type]) {
+        instanceGroups[item.instance_type] = [];
+      }
+      instanceGroups[item.instance_type].push(item.price);
+    });
+
+    // Calculate average price for each instance type
+    let averagePrices = {};
+    for (let type in instanceGroups) {
+      let prices = instanceGroups[type];
+      let avgPrice = prices.reduce((sum, p) => sum + Number(p), 0) / prices.length;
+      averagePrices[type] = avgPrice;
+    }
+
+    // Mark steals (20% cheaper than average)
+    const STEAL_THRESHOLD = 0.8; // 20% cheaper
+
+    const processedData = rows.map((item) => ({
+      ...item,
+      isSteal: Number(item.price) < Number(averagePrices[item.instance_type]) * STEAL_THRESHOLD,
+    }));    
+
+    res.json(processedData);
+    
   } catch (error) {
     console.error("Database query error:", error);
     res.status(500).json({ error: "Internal server error" });

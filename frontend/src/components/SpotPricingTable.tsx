@@ -8,6 +8,7 @@ interface SpotPrice {
   region: string;
   price: number;
   timestamp: string;
+  isSteal: boolean;
 }
 
 const SpotPricingTable: React.FC = () => {
@@ -24,7 +25,6 @@ const SpotPricingTable: React.FC = () => {
 
   // Handle search filter
   const filteredData = data.filter((item) =>
-    // console.log(item)
     item.instance_type.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -40,7 +40,7 @@ const SpotPricingTable: React.FC = () => {
       ? String(valA).localeCompare(String(valB))
       : String(valB).localeCompare(String(valA));
   });
-
+  
   return (
     <div className="container mt-4">
       <h2>AWS Spot Pricing</h2>
@@ -51,22 +51,22 @@ const SpotPricingTable: React.FC = () => {
         onChange={(e) => setSearch(e.target.value)}
         className="mb-3"
       />
-      <Table striped bordered hover>
-        <thead>
+      <Table striped bordered hover responsive>
+        <thead className="table-dark">
           <tr>
-            {["instanceType", "region", "price", "timestamp"].map((key) => (
+            {[['instance_type',"Instance Type"], ['region',"Region"], ['price',"Price"], ['timestamp',"Timestamp"]].map(([key, value]) => (
               <th key={key} onClick={() => {
                 setSortKey(key as keyof SpotPrice);
                 setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-              }}>
-                {key.toUpperCase()} {sortKey === key ? (sortOrder === "asc" ? "↑" : "↓") : ""}
+              }} style={{cursor: 'pointer'}}>
+                {value} {sortKey === key ? (sortOrder === "asc" ? "↑" : "↓") : ""}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
           {sortedData.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} className={item.isSteal ? "table-success" : ""}>
               <td>{item.instance_type}</td>
               <td>{item.region}</td>
               <td>${Number(item.price).toFixed(4)}</td>
