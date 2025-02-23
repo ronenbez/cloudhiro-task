@@ -1,6 +1,9 @@
 const mysql = require("mysql2/promise");
 const fetchSpotPrices = require("./fetchAWSData");
+const express = require("express");
 require("dotenv").config();
+
+const app = express();
 
 // MySQL Connection Config
 async function getDBConnection() {
@@ -12,9 +15,9 @@ async function getDBConnection() {
   });
 }
 
-async function storeData() {
+async function storeData(spotPrices) {
   const connection = await getDBConnection();
-  const spotPrices = await fetchSpotPrices();
+  // const spotPrices = await fetchSpotPrices();
 
   for (const price of spotPrices) {
     await connection.execute(
@@ -27,4 +30,17 @@ async function storeData() {
   await connection.end();
 }
 
-storeData();
+async function fetchAndStoreData() {
+  try {
+    console.log("Fetching AWS Spot Pricing Data...");
+    const data = await fetchSpotPrices();
+    await storeData(data);
+  } catch (error) {
+    console.error("Error fetching and storing data:", error);
+  }
+}
+
+// Run every 2 minutes
+setInterval(fetchAndStoreData, 120000);
+
+module.exports = { fetchAndStoreData };

@@ -1,3 +1,4 @@
+const { fetchAndStoreData } = require('./storeData');
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -53,6 +54,13 @@ app.get("/api/spot-pricing", async (req, res) => {
     console.error("Database query error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+});
+
+// API route to manually trigger data fetching
+app.post("/api/regenerate", async (req, res) => {
+  console.log("Manual regeneration triggered...");
+  await fetchAndStoreData();
+  res.json({ message: "Data regenerated successfully" });
 });
 
 // Start the server

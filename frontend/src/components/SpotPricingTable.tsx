@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Table from "react-bootstrap/Table";
-import Form from "react-bootstrap/Form";
+import { Table, Form, Button, Spinner } from "react-bootstrap";
 
 interface SpotPrice {
   instance_type: string;
@@ -13,15 +12,25 @@ interface SpotPrice {
 
 const SpotPricingTable: React.FC = () => {
   const [data, setData] = useState<SpotPrice[]>([]);
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<keyof SpotPrice | null>(null);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/spot-pricing")
-      .then((res) => setData(res.data))
-      .catch((err) => console.error("Error fetching data:", err));
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get("http://localhost:5000/api/spot-pricing");
+      setData(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+    setLoading(false);
+  };
 
   // Handle search filter
   const filteredData = data.filter((item) =>
@@ -43,17 +52,34 @@ const SpotPricingTable: React.FC = () => {
       ? String(valA).localeCompare(String(valB))
       : String(valB).localeCompare(String(valA));
   });
+
+  const regenerateData = async () => {
+    setLoading(true);
+    try {
+      await axios.post("http://localhost:5000/api/regenerate");
+      fetchData(); // Refresh UI after regeneration
+    } catch (error) {
+      console.error("Error regenerating data:", error);
+    }
+    setLoading(false);
+  };
   
   return (
     <div className="container mt-4">
       <h2>AWS Spot Pricing</h2>
-      <Form.Control
-        type="text"
-        placeholder="Search by instance type..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="mb-3"
-      />
+      <div className="d-flex">
+        <Form.Control
+            type="text"
+            placeholder="Search by any column..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-50 mb-3"
+        />
+        <Button onClick={regenerateData} disabled={loading} className="ms-auto mb-3">
+            {loading ? <Spinner animation="border" size="sm" /> : "Regenerate Data"}
+        </Button>
+      </div>
+
       <Table striped bordered hover responsive>
         <thead className="table-dark">
           <tr>
