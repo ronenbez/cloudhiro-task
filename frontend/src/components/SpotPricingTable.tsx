@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Form, Button, Spinner } from "react-bootstrap";
 
+const ITEMS_PER_PAGE = 10; 
+
 interface SpotPrice {
   instance_type: string;
   region: string;
@@ -16,6 +18,7 @@ const SpotPricingTable: React.FC = () => {
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<keyof SpotPrice | null>(null);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetchData();
@@ -63,10 +66,15 @@ const SpotPricingTable: React.FC = () => {
     }
     setLoading(false);
   };
+
+    // Calculate displayed rows
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const displayedData = sortedData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
   
   return (
     <div className="container mt-4">
-      <h2>AWS Spot Pricing</h2>
+      <h2 className="mb-4">AWS Spot Pricing</h2>
       <div className="d-flex">
         <Form.Control
             type="text"
@@ -94,7 +102,7 @@ const SpotPricingTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedData.map((item, index) => (
+          {displayedData.map((item, index) => (
             <tr key={index} className={item.isSteal ? "table-success" : ""}>
               <td>{item.instance_type}</td>
               <td>{item.region}</td>
@@ -104,6 +112,19 @@ const SpotPricingTable: React.FC = () => {
           ))}
         </tbody>
       </Table>
+
+      {/* Pagination Buttons */}
+      <div className="d-flex justify-content-center mt-3">
+        <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+          Prev
+        </Button>
+        <span className="mx-3">
+          Page {currentPage} of {totalPages}
+        </span>
+        <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+          Next
+        </Button>
+      </div>
     </div>
   );
 };
