@@ -1,0 +1,702 @@
+[
+  {
+    "instanceType": "c6i.large",
+    "vCPUs": 2,
+    "memoryGB": 4,
+    "family": "Compute optimized",
+    "region": "ap-northeast-1"
+  },
+  {
+    "instanceType": "c5d.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 16,
+    "family": "Compute optimized",
+    "region": "us-east-1"
+  },
+  {
+    "instanceType": "i4i.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 128,
+    "family": "Storage optimized",
+    "region": "us-gov-west-1"
+  },
+  {
+    "instanceType": "r7i.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "g5.48xlarge",
+    "vCPUs": 192,
+    "memoryGB": 768,
+    "family": "GPU instance",
+    "region": "ap-southeast-2"
+  },
+  {
+    "instanceType": "c6id.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 8,
+    "family": "Compute optimized",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "i3en.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 32,
+    "family": "Storage optimized",
+    "region": "ap-southeast-3"
+  },
+  {
+    "instanceType": "r6i.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "ap-southeast-7"
+  },
+  {
+    "instanceType": "c6g.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "us-west-2"
+  },
+  {
+    "instanceType": "m6id.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 64,
+    "family": "General purpose",
+    "region": "ap-southeast-5"
+  },
+  {
+    "instanceType": "m6id.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 32,
+    "family": "General purpose",
+    "region": "ca-central-1"
+  },
+  {
+    "instanceType": "r6gd.medium",
+    "vCPUs": 1,
+    "memoryGB": 8,
+    "family": "Memory optimized",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "m6i.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 384,
+    "family": "General purpose",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "r5.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "eu-west-1"
+  },
+  {
+    "instanceType": "r5a.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 768,
+    "family": "Memory optimized",
+    "region": "us-gov-east-1"
+  },
+  {
+    "instanceType": "m5d.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 32,
+    "family": "General purpose",
+    "region": "ap-south-2"
+  },
+  {
+    "instanceType": "u-12tb1.112xlarge",
+    "vCPUs": 448,
+    "memoryGB": 12288,
+    "family": "Memory optimized",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "r5.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 768,
+    "family": "Memory optimized",
+    "region": "us-gov-west-1"
+  },
+  {
+    "instanceType": "r7g.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "cn-north-1"
+  },
+  {
+    "instanceType": "inf1.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 16,
+    "family": "Machine Learning ASIC Instances",
+    "region": "ap-northeast-2"
+  },
+  {
+    "instanceType": "m6id.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 128,
+    "family": "General purpose",
+    "region": "ap-northeast-1"
+  },
+  {
+    "instanceType": "m5d.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 256,
+    "family": "General purpose",
+    "region": "ap-south-2"
+  },
+  {
+    "instanceType": "m6i.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 384,
+    "family": "General purpose",
+    "region": "ap-southeast-7"
+  },
+  {
+    "instanceType": "g4dn.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 32,
+    "family": "GPU instance",
+    "region": "eu-central-1-wl1-dtm1"
+  },
+  {
+    "instanceType": "m6id.12xlarge",
+    "vCPUs": 48,
+    "memoryGB": 192,
+    "family": "General purpose",
+    "region": "il-central-1"
+  },
+  {
+    "instanceType": "c5ad.large",
+    "vCPUs": 2,
+    "memoryGB": 4,
+    "family": "Compute optimized",
+    "region": "eu-south-1"
+  },
+  {
+    "instanceType": "c6a.large",
+    "vCPUs": 2,
+    "memoryGB": 4,
+    "family": "Compute optimized",
+    "region": "ap-east-1"
+  },
+  {
+    "instanceType": "m5d.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 256,
+    "family": "General purpose",
+    "region": "ap-northeast-3"
+  },
+  {
+    "instanceType": "c6id.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "ca-west-1"
+  },
+  {
+    "instanceType": "i3.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 61,
+    "family": "Storage optimized",
+    "region": "us-gov-east-1"
+  },
+  {
+    "instanceType": "c5d.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 16,
+    "family": "Compute optimized",
+    "region": "eu-west-2"
+  },
+  {
+    "instanceType": "r5d.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 128,
+    "family": "Memory optimized",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "r5b.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 768,
+    "family": "Memory optimized",
+    "region": "sa-east-1"
+  },
+  {
+    "instanceType": "c5d.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 8,
+    "family": "Compute optimized",
+    "region": "us-east-1"
+  },
+  {
+    "instanceType": "r5.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "ap-northeast-2-wl1-cjj1"
+  },
+  {
+    "instanceType": "c6a.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 64,
+    "family": "Compute optimized",
+    "region": "ca-central-1"
+  },
+  {
+    "instanceType": "c6id.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 128,
+    "family": "Compute optimized",
+    "region": "eu-west-2"
+  },
+  {
+    "instanceType": "c5d.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "us-east-1-nyc-1"
+  },
+  {
+    "instanceType": "r7i.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 32,
+    "family": "Memory optimized",
+    "region": "us-west-1"
+  },
+  {
+    "instanceType": "c5a.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "r6a.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "ap-south-2"
+  },
+  {
+    "instanceType": "c6gn.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 8,
+    "family": "Compute optimized",
+    "region": "me-south-1"
+  },
+  {
+    "instanceType": "c6i.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "me-south-1"
+  },
+  {
+    "instanceType": "r6idn.12xlarge",
+    "vCPUs": 48,
+    "memoryGB": 384,
+    "family": "Memory optimized",
+    "region": "us-east-2"
+  },
+  {
+    "instanceType": "m5.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 256,
+    "family": "General purpose",
+    "region": "us-gov-east-1"
+  },
+  {
+    "instanceType": "c7i.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "c5n.18xlarge",
+    "vCPUs": 72,
+    "memoryGB": 192,
+    "family": "Compute optimized",
+    "region": "us-east-2"
+  },
+  {
+    "instanceType": "m6i.32xlarge",
+    "vCPUs": 128,
+    "memoryGB": 512,
+    "family": "General purpose",
+    "region": "ap-southeast-3"
+  },
+  {
+    "instanceType": "r4.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 30.5,
+    "family": "Memory optimized",
+    "region": "us-west-2"
+  },
+  {
+    "instanceType": "c6i.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 128,
+    "family": "Compute optimized",
+    "region": "mx-central-1"
+  },
+  {
+    "instanceType": "m6a.large",
+    "vCPUs": 2,
+    "memoryGB": 8,
+    "family": "General purpose",
+    "region": "ca-central-1"
+  },
+  {
+    "instanceType": "r6i.32xlarge",
+    "vCPUs": 128,
+    "memoryGB": 1024,
+    "family": "Memory optimized",
+    "region": "cn-northwest-1"
+  },
+  {
+    "instanceType": "m5d.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 128,
+    "family": "General purpose",
+    "region": "ap-northeast-3"
+  },
+  {
+    "instanceType": "x2iezn.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 1024,
+    "family": "Memory optimized",
+    "region": "me-central-1"
+  },
+  {
+    "instanceType": "r6id.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "mx-central-1"
+  },
+  {
+    "instanceType": "c5a.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 64,
+    "family": "Compute optimized",
+    "region": "ap-southeast-2"
+  },
+  {
+    "instanceType": "c6a.48xlarge",
+    "vCPUs": 192,
+    "memoryGB": 384,
+    "family": "Compute optimized",
+    "region": "us-west-1"
+  },
+  {
+    "instanceType": "m5.large",
+    "vCPUs": 2,
+    "memoryGB": 8,
+    "family": "General purpose",
+    "region": "il-central-1"
+  },
+  {
+    "instanceType": "r5n.12xlarge",
+    "vCPUs": 48,
+    "memoryGB": 384,
+    "family": "Memory optimized",
+    "region": "ap-southeast-2"
+  },
+  {
+    "instanceType": "r5.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 32,
+    "family": "Memory optimized",
+    "region": "ca-west-1"
+  },
+  {
+    "instanceType": "r6id.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 256,
+    "family": "Memory optimized",
+    "region": "us-east-2"
+  },
+  {
+    "instanceType": "c5d.12xlarge",
+    "vCPUs": 48,
+    "memoryGB": 96,
+    "family": "Compute optimized",
+    "region": "ap-southeast-3"
+  },
+  {
+    "instanceType": "i3en.12xlarge",
+    "vCPUs": 48,
+    "memoryGB": 384,
+    "family": "Storage optimized",
+    "region": "us-east-2"
+  },
+  {
+    "instanceType": "c5d.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 16,
+    "family": "Compute optimized",
+    "region": "eu-west-1"
+  },
+  {
+    "instanceType": "m6a.48xlarge",
+    "vCPUs": 192,
+    "memoryGB": 768,
+    "family": "General purpose",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "r6a.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "ca-central-1"
+  },
+  {
+    "instanceType": "g4dn.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 128,
+    "family": "GPU instance",
+    "region": "cn-north-1"
+  },
+  {
+    "instanceType": "c6i.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 8,
+    "family": "Compute optimized",
+    "region": "eu-west-1"
+  },
+  {
+    "instanceType": "m6id.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 384,
+    "family": "General purpose",
+    "region": "eu-central-2"
+  },
+  {
+    "instanceType": "c6id.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "ap-southeast-7"
+  },
+  {
+    "instanceType": "m6a.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 384,
+    "family": "General purpose",
+    "region": "us-east-1"
+  },
+  {
+    "instanceType": "c4.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 7.5,
+    "family": "Compute optimized",
+    "region": "eu-west-2"
+  },
+  {
+    "instanceType": "trn1.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 32,
+    "family": "Machine Learning ASIC Instances",
+    "region": "us-west-2"
+  },
+  {
+    "instanceType": "c7a.large",
+    "vCPUs": 2,
+    "memoryGB": 4,
+    "family": "Compute optimized",
+    "region": "us-east-1"
+  },
+  {
+    "instanceType": "m5.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 256,
+    "family": "General purpose",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "r4.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 122,
+    "family": "Memory optimized",
+    "region": "ap-southeast-1"
+  },
+  {
+    "instanceType": "i8g.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 512,
+    "family": "Storage optimized",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "g5.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 256,
+    "family": "GPU instance",
+    "region": "us-west-2"
+  },
+  {
+    "instanceType": "r5d.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 64,
+    "family": "Memory optimized",
+    "region": "us-west-2-phx-1"
+  },
+  {
+    "instanceType": "r5dn.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 32,
+    "family": "Memory optimized",
+    "region": "us-gov-west-1"
+  },
+  {
+    "instanceType": "r4.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 122,
+    "family": "Memory optimized",
+    "region": "eu-west-3"
+  },
+  {
+    "instanceType": "c5d.12xlarge",
+    "vCPUs": 48,
+    "memoryGB": 96,
+    "family": "Compute optimized",
+    "region": "me-central-1"
+  },
+  {
+    "instanceType": "r7i.48xlarge",
+    "vCPUs": 192,
+    "memoryGB": 1536,
+    "family": "Memory optimized",
+    "region": "sa-east-1"
+  },
+  {
+    "instanceType": "m5dn.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 16,
+    "family": "General purpose",
+    "region": "us-east-1"
+  },
+  {
+    "instanceType": "c6in.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 8,
+    "family": "Compute optimized",
+    "region": "us-west-1"
+  },
+  {
+    "instanceType": "m5a.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 256,
+    "family": "General purpose",
+    "region": "ca-central-1"
+  },
+  {
+    "instanceType": "c6a.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 16,
+    "family": "Compute optimized",
+    "region": "ap-south-1"
+  },
+  {
+    "instanceType": "c5ad.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 128,
+    "family": "Compute optimized",
+    "region": "sa-east-1"
+  },
+  {
+    "instanceType": "m6in.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 16,
+    "family": "General purpose",
+    "region": "us-east-2"
+  },
+  {
+    "instanceType": "c7g.4xlarge",
+    "vCPUs": 16,
+    "memoryGB": 32,
+    "family": "Compute optimized",
+    "region": "us-west-1"
+  },
+  {
+    "instanceType": "i3en.large",
+    "vCPUs": 2,
+    "memoryGB": 16,
+    "family": "Storage optimized",
+    "region": "ap-southeast-5"
+  },
+  {
+    "instanceType": "m5d.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 128,
+    "family": "General purpose",
+    "region": "eu-west-3"
+  },
+  {
+    "instanceType": "t4g.2xlarge",
+    "vCPUs": 8,
+    "memoryGB": 32,
+    "family": "General purpose",
+    "region": "eu-south-2"
+  },
+  {
+    "instanceType": "m8g.large",
+    "vCPUs": 2,
+    "memoryGB": 8,
+    "family": "General purpose",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "r5n.8xlarge",
+    "vCPUs": 32,
+    "memoryGB": 256,
+    "family": "Memory optimized",
+    "region": "eu-west-1"
+  },
+  {
+    "instanceType": "c6i.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 192,
+    "family": "Compute optimized",
+    "region": "eu-south-1"
+  },
+  {
+    "instanceType": "r7i.16xlarge",
+    "vCPUs": 64,
+    "memoryGB": 512,
+    "family": "Memory optimized",
+    "region": "mx-central-1"
+  },
+  {
+    "instanceType": "t3.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 16,
+    "family": "General purpose",
+    "region": "eu-central-1"
+  },
+  {
+    "instanceType": "c7a.xlarge",
+    "vCPUs": 4,
+    "memoryGB": 8,
+    "family": "Compute optimized",
+    "region": "us-east-1"
+  },
+  {
+    "instanceType": "c5d.24xlarge",
+    "vCPUs": 96,
+    "memoryGB": 192,
+    "family": "Compute optimized",
+    "region": "ap-south-2"
+  }
+]
