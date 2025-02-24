@@ -10,6 +10,7 @@ interface SpotPrice {
   price: number;
   timestamp: string;
   isSteal: boolean;
+  normalizedScore: number;
 }
 
 const SpotPricingTable: React.FC = () => {
@@ -91,7 +92,7 @@ const SpotPricingTable: React.FC = () => {
       <Table striped bordered hover responsive>
         <thead className="table-dark">
           <tr>
-            {[['instance_type',"Instance Type"], ['region',"Region"], ['price',"Price"], ['timestamp',"Timestamp"]].map(([key, value]) => (
+            {[['instance_type',"Instance Type"], ['region',"Region"], ['price',"Price"], ['timestamp',"Timestamp"], ['normalizedScore','Normalized Score']].map(([key, value]) => (
               <th key={key} onClick={() => {
                 setSortKey(key as keyof SpotPrice);
                 setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -108,6 +109,7 @@ const SpotPricingTable: React.FC = () => {
               <td>{item.region}</td>
               <td>${Number(item.price).toFixed(4)}</td>
               <td>{new Date(item.timestamp).toLocaleString()}</td>
+              <td>{item.normalizedScore}</td>
             </tr>
           ))}
         </tbody>

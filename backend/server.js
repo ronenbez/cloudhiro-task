@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
+const fs = require("fs");
 
 const app = express();
 app.use(cors());
@@ -43,11 +44,38 @@ app.get("/api/spot-pricing", async (req, res) => {
     // Mark steals (50% cheaper than average)
     const STEAL_THRESHOLD = 0.5; // 50% cheaper
 
-    const processedData = rows.map((item) => ({
-      ...item,
-      isSteal: Number(item.price) < Number(averagePrices[item.region]) * STEAL_THRESHOLD,
-    }));    
+    // Normalize cpu & memory
+    // Load EC2 specifications (read only once)
+    const ec2Specs = JSON.parse(fs.readFileSync("ec2Specs.json", "utf8"));
 
+    // Create a lookup map for instance specs
+    const instanceSpecsMap = ec2Specs.reduce((acc, spec) => {
+    acc[spec.instanceType] = spec;
+    return acc;
+    }, {});
+  
+    const processedData = rows.map((item) => {
+        const price = Number(item.price);
+        const avgPrice = Number(averagePrices[item.region]);
+        const isSteal = price < avgPrice * STEAL_THRESHOLD;
+      
+        // Get instance details from ec2Specs.json
+        const instanceSpecs = instanceSpecsMap[item.instance_type];
+      
+        let normalizedScore = null;
+        
+        if (instanceSpecs) {
+          const { vCPUs, memoryGB } = instanceSpecs;
+          normalizedScore = (vCPUs * memoryGB) / price;
+        }
+      
+        return {
+          ...item,
+          isSteal,
+          normalizedScore: normalizedScore ? normalizedScore.toFixed(0) : null,
+        };
+    });
+      
     res.json(processedData);
 
   } catch (error) {
